@@ -1,0 +1,205 @@
+/*%=%=%=%=%=%=% GLOBAL %=%=%=%=%=%=%*/
+    /*======== Fuentes ========*/
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    *{font-family: 'Comic Neue', cursive; font-size: 16px;}
+    /*======== scrollbar ========*/
+    ::-webkit-scrollbar{background: #e6e2e4;width: 10px;}
+    ::-webkit-scrollbar-thumb{background: #ff7cbda6;border-radius: 2px;cursor: pointer;}
+    ::-webkit-scrollbar-thumb:hover{background: #ff7cbd82;cursor: pointer;}
+    /*======== Links ========*/
+    a{color: #000000;text-decoration: none;}
+        /*Comportamientos del texto del link cuando se interactúa con el*/
+    a:focus, a:link, a.visited{color: #51068a;text-decoration: none;}
+    a:hover{color: #51068a;font-weight: bold;}
+    /*======== Headings ========*/
+    h1, h2, h3, h4, h5, h6{font-family: 'Comic Neue', cursive;font-weight: 300;-webkit-margin-after: 0;-webkit-margin-before: 0;-webkit-margin-end: 0;-webkit-margin-start: 0;}
+    h1{font-size: 3rem;}h2{font-size: 2.5rem;}h3{font-size: 2.1rem;}h4{font-size: 1.8rem;}
+    h5{font-size: 1.5rem;}h6{font-size: 1.2rem;}
+    /*======== content ========*/
+    .content{background: #f3f1ff;margin: 0 auto;max-width: 1440px;padding-left: 1rem;padding-right: 1rem;}
+    /*======== Paragraph ========*/
+    .paragraph{}
+    code{background: #f7e5ee;color: #b007b3;display: inline;font-family: 'VT323', monospace;font-size: 1.15rem;letter-spacing: 1px;padding: 1%;white-space: break-spaces;}
+    .code{background: transparent;color: #6907b3;display: inline;font-family: 'VT323', monospace;font-size: 1.15rem;letter-spacing: 1px;padding: 1%;white-space: break-spaces;}
+/*%=%=%=%=%=%=% HEADER %=%=%=%=%=%=%*/
+.header{background: linear-gradient(135deg, rgb(243, 207, 235) 0%, rgb(220, 178, 209) 44%, rgb(204, 129, 184) 100%);height: 100%;position: absolute;top: 0;width: 100%;}
+.title-header{padding-bottom: 1rem !important;padding-top: 1rem !important;text-align: center;}
+.bg-header{background: url('../img/web-design2.png') no-repeat center;background-size: contain;-webkit-background-size: contain;-moz-background-size: contain;-o-background-size: contain;height: 400px !important;width: 100%;}
+.bg-cover{background: url('../img/web-design2.png') no-repeat center;background-size: cover;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;height: 100%;width: 100%;}
+/*%=%=%=%=%=%=% Componentes %=%=%=%=%=%=%*/
+    /*======== Paddings ========*/
+    .padd-1{padding: 1rem !important;}
+    .padd-2{padding: 2rem !important;}
+    .padd-3{padding: 3rem !important;}
+    .padd-4{padding: 4rem !important;}
+    .pl-1{padding-bottom: 1rem !important;padding-top: 1rem !important;}
+    .pl-2{padding-bottom: 2rem !important;padding-top: 2rem !important;}
+    .pl-3{padding-bottom: 3rem !important;padding-top: 3rem !important;}
+    .pl-4{padding-bottom: 4rem !important;padding-top: 4rem !important;}
+    .pt-1{padding-left: 1rem !important;padding-right: 1rem !important;}
+    .pt-2{padding-left: 2rem !important;padding-right: 2rem !important;}
+    .pt-3{padding-left: 3rem !important;padding-right: 3rem !important;}
+    .pt-4{padding-left: 4rem !important;padding-right: 4rem !important;}
+    /*======== Cards ========*/
+    .cards div {background: white;border: 1px solid #969696;border-radius: 3px;box-sizing: border-box;box-shadow: 2px 2px 10px -2px #d0d0d0;-webkit-box-shadow: 2px 2px 10px -2px #d0d0d0;-moz-box-shadow: 2px 2px 10px -2px #d0d0d0;margin-bottom: 1rem;padding: 0.5rem}
+    /*======== Text Align ========*/
+    .text-center{text-align: center; text-align: -webkit-center;}
+    .text-justify{text-align:justify;}
+/*%=%=%=%=%=%=% COLUMNS %=%=%=%=%=%=%*/
+.flex-container{display: -webkit-flex;display: flex;flex-wrap: wrap;-webkit-flex-wrap: wrap;height: auto;width: auto;}
+/*Justifica las columnas en el centro*/
+.col-center{justify-content: center;-webkit-justify-content: center;}
+/*rellena con espacios vacíos entre las columnas para que llegue al 100% del width */
+.col-space-around{justify-content: space-around;-webkit-justify-content: space-around;}
+/*Ancho de cada columna MOBILE */
+.col-s-1{width: 6.33%;}.col-s-2{width: 14.66%;}.col-s-3{width: 23%;}
+.col-s-4{width: 31.33%;}.col-s-5{width: 36.66%;}.col-s-6{width: 48%;}
+.col-s-7{width: 56.33%;}.col-s-8{width: 64.66%;}.col-s-9{width: 73%;}
+.col-s-10{width: 81.33%;}.col-s-11{width: 89.66%;}.col-s-12{width: 98%;}
+/*Ancho de cada columna DESKTOP */
+@media (min-width: 1050px) {
+  .col-xl-1{width: 6.33%;}.col-xl-2{width: 14.66%;}.col-xl-3{width: 23%;}
+  .col-xl-4{width: 31.33%;}.col-xl-5{width: 36.66%;}.col-xl-6{width: 48%;}
+  .col-xl-7{width: 56.33%;}.col-xl-8{width: 64.66%;}.col-xl-9{width: 73%;}
+  .col-xl-10{width: 81.33%;}.col-xl-11{width: 89.66%;}.col-xl-12{width: 98%;}
+}
+/*Ancho de cada columna TABLET LG */
+@media (min-width: 992px) {
+  .col-l-1{width: 6.33%;}.col-l-2{width: 14.66%;}.col-l-3{width: 23%;}
+  .col-l-4{width: 31.33%;}.col-l-5{width: 36.66%;}.col-l-6{width: 48%;}
+  .col-l-7{width: 56.33%;}.col-l-8{width: 64.66%;}.col-l-9{width: 73%;}
+  .col-l-10{width: 81.33%;}.col-l-11{width: 89.66%;}.col-l-12{width: 98%;}
+}
+/*Ancho de cada columna TABLET */
+@media (min-width: 720px) {
+  .col-m-1{width: 6.33%;}.col-m-2{width: 14.66%;}.col-m-3{width: 23%;}
+  .col-m-4{width: 31.33%;}.col-m-5{width: 36.66%;}.col-m-6{width: 48%;}
+  .col-m-7{width: 56.33%;}.col-m-8{width: 64.66%;}.col-m-9{width: 73%;}
+  .col-m-10{width: 81.33%;}.col-m-11{width: 89.66%;}.col-m-12{width: 98%;}
+}
+.col-nav{box-sizing: border-box;height: auto;}
+/*Estilo para cada columna*/
+.col-s-1,.col-s-2,.col-s-3,.col-s-4,.col-s-5,.col-s-6,.col-s-7,.col-s-8,.col-s-9,.col-s-10,.col-s-11,.col-s-12{box-sizing: border-box;height: auto;margin: 1%;padding: 1%;}
+.col-m-1,.col-m-2,.col-m-3,.col-m-4,.col-m-5,.col-m-6,.col-m-7,.col-m-8,.col-m-9,.col-m-10,.col-m-11,.col-m-12{box-sizing: border-box;height: auto;margin: 1%;padding: 1%;}
+.col-l-1,.col-l-2,.col-l-3,.col-l-4,.col-l-5,.col-l-6,.col-l-7,.col-l-8,.col-l-9,.col-l-10,.col-l-11,.col-l-12{box-sizing: border-box;height: auto;margin: 1%;padding: 1%;}
+.col-xl-1,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-10,.col-xl-11,.col-xl-12{box-sizing: border-box;height: auto;margin: 1%;padding: 1%;}
+/*Método 2 para dividir en columnas, pero sin salto de linea
+  Todas se mantienen en la misma fila.*/
+.item1{flex: 5;-webkit-flex: 5;}
+.item2{flex: 3;-webkit-flex: 3;}
+.item3{flex: 2;-webkit-flex: 2;}
+/*Estilo para los item*/
+.item1, .item2, .item3{padding: 1%;box-sizing: border-box;}
+
+
+/*
+body,html{height: 100%;width: 100%;}
+body{background: #ebe9e2;color: #555555;font-size: 18px;transition: font-size 1s;}
+hr{background: #8CC854;border: 0;height: 15px;}*/
+    /*Más estilos para hr: https://codepen.io/ibrahimjabbari/pen/ozinB*/
+
+
+
+
+
+
+/*======== Forms ========*/
+label{display: block;width: 80%;}
+input, textarea{border-radius: 10px; width: 80%;}
+::-webkit-input-placeholder{color: #a2a2a2;font-family: Roboto-Light;margin-inside: 5px;}
+::-moz-placeholder{color: #a2a2a2;font-family: Roboto-Light;}
+:-ms-input-placeholder{color: #a2a2a2;font-family: Roboto-Light;}
+input:-moz-placeholder{color: #a2a2a2;font-family: Roboto-Light;}
+
+
+/*%=%=%=%=%=%=% SECTIONS %=%=%=%=%=%=%*/
+.header-primary{background: url('../img/bg-header-2.jpg') no-repeat center;background-size: cover;-moz-background-size: cover;-o-background-size: cover;-webkit-background-size: cover;padding: 15%;width: auto;}
+.nav{background: #CFF1C0;box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.52);-webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.52);-moz-box-shadow: 0px 0px 11px- 2px rgba(0,0,0,0.52);list-style-type: none;position: relative;z-index: 1;}
+.section{background: #CFF1C0;}
+
+.footer{background: #cdc8d2;-webkit-box-shadow: 0px -3px 11px -2px rgba(0,0,0,0.52);-moz-box-shadow: 0px -3px 11px -2px rgba(0,0,0,0.52);box-shadow: 0px -3px 11px -2px rgba(0,0,0,0.52);}
+/*======== HTML ========*/
+blockquote{background: #f7f7f7;margin: 1%;padding: 2%;}
+.col-border-html{border: 2px #D52A8B solid;box-sizing: border-box;}
+.hr-simple{background: #8CC854;border: 0;height: 2px;}
+        /* Style for UL */
+.square{ list-style-type: square;} .circle{ list-style-type: circle;}
+        /* Style for OL */
+.zero{ list-style-type: decimal-leading-zero;} .latin{ list-style-type: upper-latin;}
+.l-latin{ list-style-type: lower-latin;} .roman{ list-style-type: upper-roman;}
+.l-roman{ list-style-type: lower-roman;}
+        /* Images */
+.img-responsive{height: auto;width: 100%;}
+.img-responsive-50{height: auto;width: 50%;}
+.img-rounded{border-radius: 6px;}
+.img-circle{border: 4px solid #ffffff;border-radius: 50%;box-sizing: border-box;}
+.img-thumbnail{border: 4px solid #ffffff;border-radius: 5px;box-sizing: border-box;}
+        /* Sounds */
+audio{background: linear-gradient(45deg, rgba(255,184,115,0.65) 0%,rgba(255,124,189,0.65) 50%,rgba(108,0,153,0.65) 100%);border-radius: 3px;height: 75px;margin: 1%;padding: 2%;}
+        /* Forms */
+.bttn{display: inline-block;width: 20% !important;}
+
+/*======== jQuery ========*/
+.label-jq{margin: 0.5em;}
+.form-jq{display: none;}
+.cardjQ{background: #fefff3;border-radius: 3px;box-shadow: 6px 6px 11px -5px #A6A6A6;-moz-box-shadow: 6px 6px 11px -5px #A6A6A6;-webkit-box-shadow: 6px 6px 11px -5px #A6A6A6;}
+.jQ-hr{background: #bb8b01;border: 0;height: 2px;}
+.sizer{display:inline-block;font-size: 2em;margin: 0 0.2em 0 0.2em; text-decoration: none !important;}
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../font/icomoon.eot');
+    src:  url('../font/icomoon.eot') format('embedded-opentype'),
+    url('../font/icomoon.ttf') format('truetype'),
+    url('../font/icomoon.woff') format('woff'),
+    url('../font/icomoon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+.down{color: red !important;}.down:after{content: "\e8db";font-family: icomoon;font-size: 1.5em;vertical-align: bottom;}
+.up{color: #4e7c0b !important;} .up:before{content: "\e8dc";font-family: icomoon;font-size: 1.5em;vertical-align: bottom;}
+.down, .up{text-decoration: none !important;}
+
+
+/*%=%=%=%=%=%=% VARIOS %=%=%=%=%=%=%*/
+small{font-size: 16px;}
+
+.coin{background-color: gray;border-radius: 25px;color: white;display: inline-block;font-weight: bold;font-size: 20px;height: 50px;line-height: 50px;margin: 10px;text-align: center;width: 50px;}
+/*======== BUTTONS ========*/
+a.btn{background: linear-gradient(45deg,#DDD8CF 0%, #ceacc7 50%, #8682a1 100%);border-radius: 3px; box-shadow: 0px 2px 4px rgba(34, 62, 66, 0.25);display: inline-block;padding: 10px 25px; text-decoration: none;transition: box-shadow 0.5s ease;-webkit-transition: box-shadow 0.5s ease;}
+    /*Animación de los botones cuando se coloca el cursor encima*/
+a.btn:hover{box-shadow: 0px 4px 4px rgba(34,62,66,.5);transition: box-shadow 0.5s ease;-webkit-transition: box-shadow 0.5s ease;}
+/*======== TABLAS ========*/
+table{border-spacing: 0;}
+.combinate, .combinate > tbody> tr > td {border: 1px #32774F solid;}
+.table {border: 1px #4F6DA6 solid;}
+.table > tbody > tr > td{border: 1px #4F6DA6 solid;padding: 1%;}
+/*======== BORDERS ========*/
+.border{border: 1px rgba(16, 119, 51, 0.81) solid;box-sizing: border-box;/*Opera/IE 8+*/-webkit-box-sizing: border-box;/*Safari/Chrome, other WebKit*/-moz-box-sizing: border-box;/*Firefox, other Gecko*/}
+.col-border{border: 2px #905fa0 solid;box-sizing: border-box;}
+/*======== IMPLEMENTOS ========*/
+.padd5{padding: 5%;} .padd2{padding: 2%;} .padd1{padding: 1%;}
+.padd35px{padding-left: 35px;}
+.tab{padding-left: 20px;}
+.marg5{margin: 5%;} .marg2{margin: 2%;}
+.inline-b{display: inline-block;} .inline-f{ display: inline-flex;}
+
+.title{padding-bottom: 2%;} .li-noStyle{list-style-type: none;}
+/*======== PAGE FULL COVER ========*/
+
+.title-center{padding: 20% 20% 5% 20%;text-align: center;text-align: -webkit-center;}
+
+/*%=%=%=%=%=%=% MEDIA QUERY %=%=%=%=%=%=%*/
+    /*Ancho de cada columna DESKTOP */
+    @media (min-width: 1050px) {
+
+    }
+    /*Ancho de cada columna TABLET LG */
+    @media (min-width: 992px) {
+      .title-header{padding-bottom: 14rem !important;padding-top: 14rem !important;text-align: left;}
+
+    }
+    /*Ancho de cada columna TABLET */
+    @media (min-width: 720px) {
+      .title-header{padding-bottom: 14rem !important;padding-top: 14rem !important;text-align: left;}
+      .bg-header{background-position: right;height: auto !important;}
+    }
