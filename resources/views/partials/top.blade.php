@@ -6,7 +6,7 @@
       <meta name="DC.Language" scheme="RFC1766" content="Spanish">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Página de guía donde coloco todo lo aprendido en cursosde laravel. Desarrollado por Susana Piñero @susananzth"/>
-      <meta name="keywords" content="Laravel, Laravel 6, PHP, Tutorial de Laravel"/>
+      <meta name="keywords" content="Laravel, Laravel 8, PHP, Tutorial de Laravel"/>
       <meta name="author" content="Susana Piñero Rodríguez" />
       <meta name="copyright" content="Susana Piñero Rodríguez" />
       <META name="reply-to" content="susananzth@gmail.com">
@@ -18,7 +18,7 @@
       <meta name="Revisit-after" content="1 days">
       <meta name="robots" content="ALL">
       <!-- Título de la página -->
-      <title>Laravel 6 | SusanaNzth</title>
+      <title>Laravel 8 | SusanaNzth</title>
 
 
       <!-- Fuentes -->
