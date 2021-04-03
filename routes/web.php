@@ -33,6 +33,34 @@ Route::get('count-users', function () {
     }
 });
 
+Route::get('collection', function () {
+    $users = User::get();
+    
+    /* Consultando datos con colecciones */
+    // dd($users);  ---> Los trae todos
+    // dd($users->contains(5));  ---> Trae los primeros 5
+    // dd($users->except([1,2,3]));  ---> Mostrara todos menos el id 1,2,3
+    // dd($users->only(4));  ---> Mostrara solo el que contenga ID 4
+    // dd($users->find(4));  ---> Mostrara solo el que contenga ID 4
+     dd($users->load('posts')); // ---> Mostrara los usuarios que tengan relacion con post
+});
+
+Route::get('serialization', function () {
+    $users = User::get();
+    
+    /* Presentando los datos en forma de array 
+        dd($users->toArray());
+        $user = $users->find(1);
+        dd($user);
+    */
+    
+
+    /* Presentando los datos en forma de Json  */
+
+        $user = $users->find(1);
+        dd($user->toJson());
+});
+
 Route::get('posts', function () {
     $posts = Post::get();
 
