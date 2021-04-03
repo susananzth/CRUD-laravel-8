@@ -1,8 +1,14 @@
 /*%=%=%=%=%=%=% GLOBAL %=%=%=%=%=%=%*/
     /*======== Fuentes ========*/
-    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-    *{font-family: 'Comic Neue', cursive; font-size: 16px;}
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    *, body{
+        color: inherit;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        text-decoration: none;
+    }
     /*======== scrollbar ========*/
     ::-webkit-scrollbar{background: #e6e2e4;width: 10px;}
     ::-webkit-scrollbar-thumb{background: #ff7cbda6;border-radius: 2px;cursor: pointer;}
@@ -169,10 +175,34 @@ a.btn{background: linear-gradient(45deg,#DDD8CF 0%, #ceacc7 50%, #8682a1 100%);b
     /*Animación de los botones cuando se coloca el cursor encima*/
 a.btn:hover{box-shadow: 0px 4px 4px rgba(34,62,66,.5);transition: box-shadow 0.5s ease;-webkit-transition: box-shadow 0.5s ease;}
 /*======== TABLAS ========*/
-table{border-spacing: 0;}
-.combinate, .combinate > tbody> tr > td {border: 1px #32774F solid;}
-.table {border: 1px #4F6DA6 solid;}
-.table > tbody > tr > td{border: 1px #4F6DA6 solid;padding: 1%;}
+.datatable{
+  display: block;
+  font-size: 0.9rem;
+  overflow: visible;
+  width: 100%;
+}
+.table {
+  border: 1px solid #e3e6ec;
+  border-collapse: collapse;
+  color: #687281;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+thead th, thead td {
+  border-bottom-width: 2px;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e3e6ec;
+}
+.table th, .table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #e3e6ec;
+}
+td {
+  border: 1px solid #e3e6ec;
+}
 /*======== BORDERS ========*/
 .border{border: 1px rgba(16, 119, 51, 0.81) solid;box-sizing: border-box;/*Opera/IE 8+*/-webkit-box-sizing: border-box;/*Safari/Chrome, other WebKit*/-moz-box-sizing: border-box;/*Firefox, other Gecko*/}
 .col-border{border: 2px #905fa0 solid;box-sizing: border-box;}
