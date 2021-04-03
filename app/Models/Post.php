@@ -28,7 +28,6 @@ class Post extends Model
         ];
     }
     
-
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -39,7 +38,10 @@ class Post extends Model
         return \strtoupper($title);
     }
 
-    
+    public function getGetExcerptAttribute()
+    {
+        return substr($this->body, 0, 140);
+    }
 }
 
 

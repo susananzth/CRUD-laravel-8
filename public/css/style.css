@@ -19,7 +19,7 @@
     a:focus, a:link, a.visited{color: #51068a;text-decoration: none;}
     a:hover{color: #51068a;font-weight: bold;}
     /*======== Headings ========*/
-    h1, h2, h3, h4, h5, h6{font-family: 'Comic Neue', cursive;font-weight: 300;-webkit-margin-after: 0;-webkit-margin-before: 0;-webkit-margin-end: 0;-webkit-margin-start: 0;}
+    h1, h2, h3, h4, h5, h6{font-family: 'Montserrat', sans-serif;font-weight: 300;-webkit-margin-after: 0;-webkit-margin-before: 0;-webkit-margin-end: 0;-webkit-margin-start: 0;}
     h1{font-size: 3rem;}h2{font-size: 2.5rem;}h3{font-size: 2.1rem;}h4{font-size: 1.8rem;}
     h5{font-size: 1.5rem;}h6{font-size: 1.2rem;}
     /*======== content ========*/
@@ -35,18 +35,7 @@
 .bg-cover{background: url('../img/web-design2.png') no-repeat center;background-size: cover;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;height: 100%;width: 100%;}
 /*%=%=%=%=%=%=% Componentes %=%=%=%=%=%=%*/
     /*======== Paddings ========*/
-    .padd-1{padding: 1rem !important;}
-    .padd-2{padding: 2rem !important;}
-    .padd-3{padding: 3rem !important;}
-    .padd-4{padding: 4rem !important;}
-    .pl-1{padding-bottom: 1rem !important;padding-top: 1rem !important;}
-    .pl-2{padding-bottom: 2rem !important;padding-top: 2rem !important;}
-    .pl-3{padding-bottom: 3rem !important;padding-top: 3rem !important;}
-    .pl-4{padding-bottom: 4rem !important;padding-top: 4rem !important;}
-    .pt-1{padding-left: 1rem !important;padding-right: 1rem !important;}
-    .pt-2{padding-left: 2rem !important;padding-right: 2rem !important;}
-    .pt-3{padding-left: 3rem !important;padding-right: 3rem !important;}
-    .pt-4{padding-left: 4rem !important;padding-right: 4rem !important;}
+
     /*======== Cards ========*/
     .cards div {background: white;border: 1px solid #969696;border-radius: 3px;box-sizing: border-box;box-shadow: 2px 2px 10px -2px #d0d0d0;-webkit-box-shadow: 2px 2px 10px -2px #d0d0d0;-moz-box-shadow: 2px 2px 10px -2px #d0d0d0;margin-bottom: 1rem;padding: 0.5rem}
     /*======== Text Align ========*/

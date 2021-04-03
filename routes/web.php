@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Models\Post;
@@ -15,12 +17,12 @@ use App\Models\Post;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [PageController::class, 'posts']);
+Route::get('blog/{post}', [PageController::class, 'post'])->name('post');
 
-Route::get('/', [UserController::class, 'index']);
-Route::post('users', [UserController::class, 'store'])->name('users.store');
+Route::get('/users', [UserController::class, 'index']);
+Route::post('user/store', [UserController::class, 'store'])->name('users.store');
 Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-
-
 Route::get('count-users', function () {
     $users = User::get();
     
