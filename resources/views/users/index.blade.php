@@ -6,12 +6,57 @@
 <!-- CDN DataTable con Bootstrap 5 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 <link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css" rel="stylesheet" crossorigin="anonymous" />
-
-
-
 @endsection
 
 @section('content')
+
+<div class="card mb-5">
+    <div class="card-header">Agregar usuario</div>
+    <div class="card-body">
+        @if($errors->any())
+            <div class="alert alert-danger" role="alert">
+                @foreach ($errors->all() as $error)
+                    - {{ $error }} <br />
+                @endforeach
+            </div>
+        @endif
+        <form action="{{ route('users.store') }}" method="POST">
+            <div class="form-group row">
+                <div class="input-group mb-3 col-sm-12 col-md-6">
+                    <span class="input-group-text" id="name"><i class="far fa-user"></i></span>
+                    <input name="name" id="name" type="text" class="form-control" value="{{ old('name') }}" placeholder="Usuario" aria-label="Usuario" aria-describedby="name">
+                    @error('name')
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="input-group mb-3 col-sm-12 col-md-6">
+                    <span class="input-group-text" id="email"><i class="far fa-envelope"></i></span>
+                    <input name="email" id="email" type="email" class="form-control" value="{{ old('email') }}" placeholder="Correo" aria-label="Correo" aria-describedby="email">
+                    @error('email')
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="input-group mb-3 col-sm-12 col-md-6">
+                    <span class="input-group-text" id="password"><i class="fas fa-lock"></i></span>
+                    <input name="password" id="password" type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="password">
+                    @error('password')
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="col-auto">
+                    @csrf
+                    <button id="store" name="store" type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 <div class="card">
     <div class="card-header">Listado de usuarios</div>
