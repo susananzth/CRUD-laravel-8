@@ -28,8 +28,9 @@ class PostFactory extends Factory
          * > Post::factory()->count(10)->create()
          */
         return [
-            'user_id' => rand(1,4),
-            'title' => $this->faker->sentence
+            'user_id'   => 1,
+            'title'     => $this->faker->sentence,
+            'body'      => $this->faker->text(800),
         ];
     }
 }
