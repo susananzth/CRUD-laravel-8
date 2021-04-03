@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Models\User;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,28 @@ use App\Http\Controllers\UserController;
 Route::get('/', [UserController::class, 'index']);
 Route::post('users', [UserController::class, 'store'])->name('users.store');
 Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+
+Route::get('count-users', function () {
+    $users = User::get();
+    
+    foreach($users as $user){
+        echo "
+        $user->id 
+        <strong>{$user->name}</strong>
+        {$user->posts->count()} posts
+        <br>";
+    }
+});
+
+Route::get('posts', function () {
+    $posts = Post::get();
+
+    foreach($posts as $post){
+        echo "
+        $post->id 
+        <strong>{$post->user->name}</strong>
+        $post->title 
+        <br>";
+    }
+});
