@@ -22,6 +22,12 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        /**
+         * Para generar los registros, abrir la consola de tinker con
+         * > php artisan tinker
+         * Luego ingresar el comando:
+         * > User::factory()->count(10)->create()
+         */
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
