@@ -18,6 +18,8 @@
         <meta name="DateCreated" content="Thu, 02 Apr 2021 00:00:00 GMT-5">
         <meta name="Revisit-after" content="1 days">
         <meta name="robots" content="ALL">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Título de la página -->
         <title>@yield('title') - Laravel 8</title>
         <!-- Ícono -->
@@ -25,7 +27,10 @@
         <!-- Fuentes -->
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
         <!-- Estilos -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <link href="{{  asset('css/normalize.css')}}" rel="stylesheet" type="text/css">
         <link href="{{  asset('css/style.css')}}" rel="stylesheet" type="text/css">
