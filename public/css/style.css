@@ -159,10 +159,7 @@ audio{background: linear-gradient(45deg, rgba(255,184,115,0.65) 0%,rgba(255,124,
 small{font-size: 16px;}
 
 .coin{background-color: gray;border-radius: 25px;color: white;display: inline-block;font-weight: bold;font-size: 20px;height: 50px;line-height: 50px;margin: 10px;text-align: center;width: 50px;}
-/*======== BUTTONS ========*/
-a.btn{background: linear-gradient(45deg,#DDD8CF 0%, #ceacc7 50%, #8682a1 100%);border-radius: 3px; box-shadow: 0px 2px 4px rgba(34, 62, 66, 0.25);display: inline-block;padding: 10px 25px; text-decoration: none;transition: box-shadow 0.5s ease;-webkit-transition: box-shadow 0.5s ease;}
-    /*Animación de los botones cuando se coloca el cursor encima*/
-a.btn:hover{box-shadow: 0px 4px 4px rgba(34,62,66,.5);transition: box-shadow 0.5s ease;-webkit-transition: box-shadow 0.5s ease;}
+
 /*======== TABLAS ========*/
 .datatable{
   display: block;

@@ -17,9 +17,24 @@ use App\Models\Post;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/**
+ * Publico
+ */
 Route::get('/', [PageController::class, 'posts']);
 Route::get('blog/{post}', [PageController::class, 'post'])->name('post');
 
+/**
+ * Backend
+ */
+
+ // POSTS
+Route::resource('posts', PostController::class)
+    ->middleware('auth')
+    ->except('show');
+
+// USERS
+    /* Mejorar usuarios */
 Route::get('/users', [UserController::class, 'index']);
 Route::post('user/store', [UserController::class, 'store'])->name('users.store');
 Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
@@ -63,17 +78,6 @@ Route::get('serialization', function () {
         dd($user->toJson());
 });
 
-Route::get('posts', function () {
-    $posts = Post::get();
-
-    foreach($posts as $post){
-        echo "
-        $post->id 
-        <strong>{$post->user->get_name}</strong>
-        $post->title 
-        <br>";
-    }
-});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
