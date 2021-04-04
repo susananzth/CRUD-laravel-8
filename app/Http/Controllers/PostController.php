@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
+use Illuminate\Support\Facades\Storage; 
 
 class PostController extends Controller
 {
@@ -76,7 +77,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.backend.edit', compact('post'));
     }
 
     /**
@@ -86,9 +87,21 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->update($request->all());
+
+        //Imagen
+        // Debido a que no es obligatoria, se pregunta si existe.
+        if ($request->file('file')) {
+            // Con esto, primero se guarda el archivo en la carpeta del proyecto con em metodo store()
+            // y luego elimina la anterior y se guarda la ruta de la nueva imagen.
+            Storage::disk('public')->delete($post->image);
+            $post->image = $request->file('file')->store('posts', 'public');
+            $post->save();
+        }
+        //Retornar
+        return back()->with('status', 'Actualizado con exito');
     }
 
     /**
@@ -98,7 +111,12 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)
-    {
-        //
+    {   
+        // Eliminar imagen
+        Storage::disk('public')->delete($post->image);
+        // Eliminar post
+        $post->delete();
+
+        return back()->with('status', 'Eliminado con exito');
     }
 }
