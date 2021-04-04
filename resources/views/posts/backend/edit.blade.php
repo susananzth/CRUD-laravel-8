@@ -26,7 +26,7 @@
                 <form action="{{ route('posts.update', $post) }}" method="POST" enctype="multipart/form-data">
                     <div class="form-group row">
                         <label for="title" class="form-label">Título *</label>
-                        <input name="title" id="title" type="text" class="form-control" value="{{ old('title', $post->title) }}" placeholder="Título" aria-label="Título" aria-describedby="title" required autofocus>
+                        <input name="title" id="title" type="text" class="form-control" required autofocus value="{{ old('title', $post->title) }}">
                         @error('title')
                             <div class="alert alert-danger" role="alert">
                                 {{ $message }}
@@ -34,7 +34,7 @@
                         @enderror
 
                         <label for="file" class="form-label">Imágen</label>
-                        <input name="file" id="file" type="file" class="form-control"  placeholder="Imágen" aria-label="Imágen" aria-describedby="file">
+                        <input name="file" id="file" type="file" class="form-control" value="{{ old('image', $post->get_image) }}">
                         @error('file')
                             <div class="alert alert-danger" role="alert">
                                 {{ $message }}
@@ -42,7 +42,7 @@
                         @enderror
 
                         <label for="body" class="form-label">Contenido *</label>
-                        <textarea name="body" id="body" rows="6" class="form-control" value="{{ old('body', $post->body) }}" placeholder="Contenido" aria-label="Contenido" aria-describedby="content" required></textarea>
+                        <textarea name="body" id="body" rows="6" class="form-control" required>{{ old('body', $post->body) }}</textarea>
                         @error('body')
                             <div class="alert alert-danger" role="alert">
                                 {{ $message }}
@@ -50,7 +50,7 @@
                         @enderror
 
                         <label for="iframe" class="form-label">Contenido embebido</label>
-                        <textarea name="iframe" id="iframe" class="form-control" value="{{ old('iframe', $post->iframe) }}" placeholder="Contenido embebido" aria-label="Contenido embebido" aria-describedby="iframe"></textarea>
+                        <textarea name="iframe" id="iframe" class="form-control" >{{ old('iframe', $post->iframe) }}</textarea>
                         @error('iframe')
                             <div class="alert alert-danger" role="alert">
                                 {{ $message }}

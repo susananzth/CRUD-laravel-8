@@ -22,7 +22,7 @@ use App\Models\Post;
  * Publico
  */
 Route::get('/', [PageController::class, 'posts']);
-Route::get('blog/{post}', [PageController::class, 'post'])->name('post');
+Route::get('blog/{post:slug}', [PageController::class, 'post'])->name('post');
 
 /**
  * Backend

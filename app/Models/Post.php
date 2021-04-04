@@ -20,7 +20,7 @@ class Post extends Model
         'title',
         'image',
         'body',
-        'igrame',
+        'iframe',
         'user_id',
     ];
 
@@ -46,6 +46,10 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * Para hacer las URL amigables, aplicar lo que indica la documentacion de
+     * https://github.com/cviebrock/eloquent-sluggable
+     */
     public function getTitleAttribute($title)
     {
         return \strtoupper($title);
@@ -54,6 +58,15 @@ class Post extends Model
     public function getGetExcerptAttribute()
     {
         return substr($this->body, 0, 140);
+    }
+
+    public function getGetImageAttribute()
+    {
+        if($this->image)
+        // Para poder acceder a la carpeta de storage, que es privada,
+        // Se mueve a public de forma simbolica mediante un acceso directo y asi poder acceder a ella
+        // Esto se logra colocando en la consola: php artisan storage:link
+        return url("storage/$this->image");
     }
 }
 

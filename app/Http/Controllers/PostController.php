@@ -44,7 +44,7 @@ class PostController extends Controller
         $post = Post::create([
             // Con el user_id se guarda el usuario de quien esta logueado
             'user_id' => auth()->user()->id
-        ] + $request->validated()); //No usar $request->all() , mala practica
+        ] + $request->all()); //No usar $request->all() , mala practica
 
         //Imagen
         // Debido a que no es obligatoria, se pregunta si se recibe.
