@@ -9,12 +9,13 @@
 @endsection
 
 @section('content')
-
-        <div class="card mb-4">
+    <div class="px-5 py-5">
+        <div class="card">
             <div class="card-header">
                 Posts
                 <a class="btn btn-primary float-right" href="{{ route('posts.create') }}" target="_blank" rel="noopener noreferrer">Crear post</a>
             </div>
+
             <div class="card-body">
                 <div class="datatable table-responsive">
                     <table id="indexPosts" class="table table-striped" style="width:100%">
@@ -22,23 +23,22 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Titulo</th>
-                                <th colspan="2">Acción</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach ($posts as $post)
                                 <tr>
                                     <td>{{ $post->id }}</td>
                                     <td>{{ $post->title }}</td>
                                     <td>
-                                        <a href="{{ route('posts.edit', $post) }}" class="btn btn-warning" 
+                                        <a href="{{ route('posts.edit', $post) }}" class="btn btn-warning d-inline-block" 
                                                 target="_blank"
                                                 data-toggle="tooltip" data-placement="top" title="Editar post">
                                             <i class="far fa-edit"></i> 
                                         </a>
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                        <form action="{{ route('posts.destroy', $post) }}" method="POST" class="d-inline-block">
                                             @method('DELETE')
                                             @csrf
                                             <button id="delete" name="delete" type="submit" 
@@ -56,14 +56,14 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Titulo</th>
-                                <th colspan="2">Acción</th>
+                                <th>Acción</th>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
             </div>
-        </div>       
-
+        </div>   
+    </div>
 @endsection
 
 @section('scripts')

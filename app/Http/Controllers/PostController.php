@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -16,7 +16,9 @@ class PostController extends Controller
     {
         $posts = Post::latest()->get();
 
-        return view('posts.backend.index', compact('posts'));
+        return view('posts.backend.index', [
+            'posts' => $posts
+        ]);
     }
 
     /**
@@ -26,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.backend.create');
     }
 
     /**
@@ -35,9 +37,24 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        //Guardar
+        $post = Post::create([
+            // Con el user_id se guarda el usuario de quien esta logueado
+            'user_id' => auth()->user()->id
+        ] + $request->validated()); //No usar $request->all() , mala practica
+
+        //Imagen
+        // Debido a que no es obligatoria, se pregunta si se recibe.
+        if ($request->file('file')) {
+            // Con esto, primero se guarda el archivo en la carpeta del proyecto con em metodo store()
+            // y luego se guarda la ruta en la BD
+            $post->image = $request->file('file')->store('posts', 'public');
+            $post->save();
+        }
+        //Retornar
+        return back()->with('status', 'Creado con exito');
     }
 
     /**

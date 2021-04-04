@@ -12,6 +12,19 @@ class Post extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title',
+        'image',
+        'body',
+        'igrame',
+        'user_id',
+    ];
+
+    /**
      * Para hacer las URL amigables, aplicar lo que indica la documentacion de
      * https://github.com/cviebrock/eloquent-sluggable
      * Return the sluggable configuration array for this model.

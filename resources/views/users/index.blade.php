@@ -60,6 +60,7 @@
 
 <div class="card">
     <div class="card-header">Listado de usuarios</div>
+    
     <div class="card-body">
         <div class="datatable table-responsive">
             <table id="indexUsers" class="table table-striped" style="width:100%">
